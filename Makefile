@@ -45,7 +45,12 @@ $(BCLIENT): $(BC_OBJECT) | $(LIBFT)
 $(ODIR):
 	@mkdir -p $@
 
-libft:
+git_submodule_update:
+	@git submodule deinit -f libft
+	rm -rf .git/modules/libft
+	@git submodule update --init --recursive
+
+libft: git_submodule_update
 	@make -sC ./libft
 
 $(ODIR)/%.o: %.c $(HEADER) | $(ODIR)

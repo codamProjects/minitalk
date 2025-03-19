@@ -5,5 +5,5 @@
 !.gitignore
 !Makefile
 !README.md
-!.gitsubmodule
+!.gitsubmodules
 !libft
